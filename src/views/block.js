@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 
 class Block extends Component {
+    constructor(props){
+        super(props);
+    }
 render(){
     return(
          <div className="col col-xs-6 col-md-3">
             <div className="block">
-                <img className="image" src="https://cdn0.iconfinder.com/data/icons/most-usable-logos/120/App_Store-256.png" alt="appstore"/>
-                 <aside>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</aside>
+                <img className="image" src= {this.props.imgSrc} alt="appstore"/>
+                <aside>{this.props.description}}</aside>
             </div>
             <div  className="block-overlay">
-                <div className="topbar"></div>
+            <div className="topbar">
+                <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/zoom_in-20.png" alt="view" onClick={() => {alert('view')}}/>
+                <img src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/star-20.png" alt="edit" onClick={() => {alert('stars')}}/>
+             </div>
             </div>
          </div>
     );
